@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Shell to Eclipse Bridge Plug-in
 Bundle-SymbolicName: org.steb;singleton:=true
-Bundle-Version: 0.6.5
+Bundle-Version: 0.6.6
 Bundle-Activator: org.steb.Activator
 Bundle-Vendor: Ken Gilmer
 Require-Bundle: org.eclipse.core.runtime,

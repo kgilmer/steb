@@ -2,7 +2,7 @@
 <feature
       id="org.steb.feature"
       label="Shell to Eclipse Bridge (steb)"
-      version="0.6.5"
+      version="0.6.6"
       provider-name="Ken Gilmer">
 
    <description url="http://community.buglabs.net">
