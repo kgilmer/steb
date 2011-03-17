@@ -106,6 +106,38 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
       by running:
       <pre>$ git clone git://github.com/kgilmer/steb</pre>
     </p>
+    
+    <h2>Client Source</h2>
+    <pre>
+    #!/bin/bash
+# Client script for Linux Shell Eclipse Bridge (steb)
+# Set STEBPORT to a specific port.  In shell session you can then
+# export this value to allow for multiple shell/eclipse sessions to exist peacefully
+
+if [ -z $STEBPORT ]; then
+	STEBPORT=4404
+fi
+
+proj_flag=
+
+while getopts 'p' OPTION
+do
+  case $OPTION in 
+  p)	proj_flag=1
+                    ;;
+  esac 
+done
+
+shift $(($OPTIND - 1))
+touch $1
+
+if [ "$proj_flag" ]
+then
+    echo "-p `realpath $1`" | nc localhost $STEBPORT
+else 
+    echo "`realpath $1`" | nc localhost $STEBPORT
+fi
+    </pre>
 
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/kgilmer/steb">kgilmer/steb</a>
