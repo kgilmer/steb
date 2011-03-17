@@ -46,43 +46,50 @@
       <span class="small">by <a href="http://github.com/kgilmer">kgilmer</a></span></h1>
 
     <div class="description">
-      A plugin and shell script let's Eclipse work as a standard file editor in Linux.
+      Use Eclipse as your standard file editor in Linux.
     </div>
 
     <p>If you use Linux, Eclipse, and the shell, this plugin and shell script make it easier to use Eclipse as a standard file editor.  Features:
 - Open and edit files in Eclipse from a shell session.
 - Steb will attempt to open specific editors for known extensions, and will fall back to a standard text editor if there are problems.
 - Create projects from directories with the "-p" option.
-- Use $STEBPORT and Eclipse preferences to allow concurrent sessions.</p><h2>Dependencies</h2>
+- Use $STEBPORT and Eclipse preferences to allow concurrent sessions.</p>
+<h2>Usage</h2>
+<p>After installation, from the shell edit a file with:
+<pre>$ steb myfile.txt</pre>
+Also, create an Eclipse project for a directory with:
+<pre>$ steb -p projects/myproject</pre></p>
+<h2>Dependencies</h2>
 <p>Plugin: Eclipse 3.5+, Linux
-Included Client: bash, netcat</p>
+Included Client: <a href="http://www.gnu.org/software/bash/">bash</bash>, <a href="http://netcat.sourceforge.net/">netcat</a></p>
 <h2>Install</h2>
 <p>Use http://angelshare.org/org.steb.updatesite within Eclipse update manager to install the plugins.  Copy the client script to somewhere in your PATH.</p>
 <h2>License</h2>
-<p> * Redistribution and use in source and binary forms, with or without modification, 
- * are permitted provided that the following conditions are met:
- *
- * Redistributions of source code must retain the above copyright notice, this list 
- * of conditions and the following disclaimer.
- * 
- * Redistributions in binary form must reproduce the above copyright notice, 
- * this list of conditions and the following disclaimer in the documentation 
- * and/or other materials provided with the distribution.
- * 
- * Neither the name Ken Gilmer nor the names of other contributors may be used 
- * to endorse or promote products derived from this software without specific 
- * prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
- * TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:</br>
+
+Redistributions of source code must retain the above copyright notice, this list 
+of conditions and the following disclaimer.</br>
+
+Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
+and/or other materials provided with the distribution.</br>
+
+Neither the name Ken Gilmer nor the names of other contributors may be used 
+to endorse or promote products derived from this software without specific 
+prior written permission.</br>
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 <h2>Authors</h2>
 <p>Ken Gilmer (kgilmer@gmail.com)<br/><br/>      </p>
 <h2>Contact</h2>
