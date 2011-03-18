@@ -18,7 +18,10 @@ do
 done
 
 shift $(($OPTIND - 1))
-touch $1
+if [ ! -f $1 ]
+then
+	touch $1
+fi
 
 if [ "$proj_flag" ]
 then
