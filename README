@@ -3,3 +3,5 @@ with Eclipse.  Rather than toil with workspaces and File->Open...
 drugery, launch an Eclipse editor on the command line as you
 would vi or emacs.  Steb supports multiple concurrent sessions,
 and can create projects from directories automatically.
+
+The updatesite for steb is http://angelshare.org/org.steb.updatesite.
