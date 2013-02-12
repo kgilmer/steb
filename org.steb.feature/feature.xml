@@ -2,7 +2,7 @@
 <feature
       id="org.steb.feature"
       label="Shell to Eclipse Bridge (steb)"
-      version="0.6.6"
+      version="0.7.0"
       provider-name="Ken Gilmer">
 
    <description url="http://community.buglabs.net">
@@ -58,7 +58,7 @@ DAMAGE.
    </license>
 
    <url>
-      <update label="Steb Updates" url="http://angelshare.org/org.steb.updatesite"/>
+      <update label="Steb Updates" url="http://kgilmer.github.com/steb/updatesite"/>
    </url>
 
    <plugin
