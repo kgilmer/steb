@@ -15,5 +15,8 @@
    <feature url="features/org.steb.feature_0.6.6.jar" id="org.steb.feature" version="0.6.6">
       <category name="steb_category"/>
    </feature>
+   <feature url="features/org.steb.feature_0.7.0.jar" id="org.steb.feature" version="0.7.0">
+      <category name="steb_category"/>
+   </feature>
    <category-def name="steb_category" label="Shell to Eclipse Bridge"/>
 </site>
