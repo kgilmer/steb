@@ -1,4 +1,4 @@
-# STEB - Shell to Linux Bridge
+# STEB - Shell to Eclipse Bridge
 
 STEB allows for easy shell integration
 with Eclipse.  Rather than toil with workspaces and File->Open...
@@ -11,6 +11,8 @@ and can create projects from directories automatically.
 - Use the Eclipse "Compare Files" (AKA diff) feature.  Usage: `steb -c file1 file2`
 
 ## STEB shell script
+
+Put the following script somewhere on your path.  Be sure that nc (netcat) and realpath are also on your path.
 
 ```
 #!/bin/bash
@@ -53,4 +55,4 @@ fi
 
 ## Install
 
-The updatesite for steb is http://kgilmer.github.com/steb/updatesite.
+The updatesite for STEB is http://kgilmer.github.com/steb/updatesite.
