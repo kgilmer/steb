@@ -141,14 +141,9 @@ public class Activator extends Plugin implements IStartup, IPropertyChangeListen
 		if (listener != null) {
 			return;
 		}
-
-		//try {
-			listener = new FileOpenListener(this.getLog(), currentPort);
-			listener.start();
-		/*} catch (IOException e) {
-			this.getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Unable to start steb listener. (" + e.getMessage() + ")"));
-			preferenceStore.setValue(PreferenceConstants.P_BOOLEAN, Boolean.FALSE);
-		}*/
+        listener = new FileOpenListener(this.getLog(), currentPort);
+        listener.start();
+		
 	}
 
 	/**

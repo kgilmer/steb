@@ -102,41 +102,77 @@ public class FileOpenListener extends Thread {
 				}
 				
 				boolean projectMode = false;
-				if (line.trim().startsWith("-p")) {
+				boolean compareMode = false;
+				File file = null, cfile1 = null, cfile2 = null;
+				
+				if (line.trim().startsWith("-p ")) {
 					projectMode = true;
 					line = line.split(" ")[1];
-				} 
+				} else if (line.trim().startsWith("-c ")) {
+				    compareMode = true;
+				    String[] fileLines = line.split(" ");
+				    
+				    if (fileLines.length != 3)
+				        continue;
+				    
+				    cfile1 = new File(fileLines[1]);
+				    cfile2 = new File(fileLines[2]);
+				}
 
-				final File file = new File(line);
-
-				if (file.exists() && !file.isFile() && !projectMode) {
-					continue;
+				if (!compareMode) {
+    				file = new File(line);
+    
+    				if (file.exists() && !file.isFile() && !projectMode) {
+    					continue;
+    				}
+    				
+    				if (file.exists() && !file.isDirectory() && projectMode) {
+    					continue;
+    				}
+				} else {				    
+				    if (!cfile1.exists()) {
+                        continue;
+                    }
+				    
+				    if (!cfile2.exists()) {
+                        continue;
+                    }
 				}
 				
-				if (file.exists() && !file.isDirectory() && projectMode) {
-					continue;
-				}
-				
+				final File ffile = file;
 				if (projectMode) {
 					PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 						
 						public void run() {
 							try {
-								EclipseEditorHelper.createEclipseProjectForDirectory(file, true, PlatformUI.getWorkbench());
+								EclipseEditorHelper.createEclipseProjectForDirectory(ffile, true, PlatformUI.getWorkbench());
 							} catch (Exception e) {
-								log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open editor for file: " + file.getAbsolutePath(), e));
+								log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open editor for file: " + ffile.getAbsolutePath(), e));
 							}
 						}
 	
 					});	
+				} else if (compareMode) {
+				        final File fcfile1 = cfile1, fcfile2 = cfile2;
+				        PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+                        
+                        public void run() {
+                            try {
+                                EclipseEditorHelper.createEclipseCompareEditorForFiles(fcfile1, fcfile2, PlatformUI.getWorkbench());
+                            } catch (Exception e) {
+                                log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open editor for file: " + ffile.getAbsolutePath(), e));
+                            }
+                        }
+    
+                    }); 
 				} else {
 					PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 	
 						public void run() {
 							try {
-								EclipseEditorHelper.openEclipseEditorForFile(file, true, PlatformUI.getWorkbench());
+								EclipseEditorHelper.openEclipseEditorForFile(ffile, true, PlatformUI.getWorkbench());
 							} catch (Exception e) {
-								log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open editor for file: " + file.getAbsolutePath(), e));
+								log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open editor for file: " + ffile.getAbsolutePath(), e));
 							}
 						}
 	

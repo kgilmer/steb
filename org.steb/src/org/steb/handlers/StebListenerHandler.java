@@ -14,8 +14,6 @@ import org.steb.Activator;
 
 public class StebListenerHandler extends AbstractHandler implements IElementUpdater {
 	
-	private UIElement element;
-
 	public StebListenerHandler() {
 	}
 
@@ -43,6 +41,6 @@ public class StebListenerHandler extends AbstractHandler implements IElementUpda
 
 	@Override
 	public void updateElement(UIElement element, Map parameters) {
-		this.element = element;		
+		
 	}
 }
